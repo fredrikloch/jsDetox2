@@ -1,0 +1,10 @@
+<head>
+    {{ partial "meta.html" . }}
+    <title>{{ .Title }} &middot; {{ .Site.Title }} </title>
+    <link rel="canonical" href="{{ .Site.BaseURL }}" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}">
+
+    <link rel="stylesheet" type="text/css" href='{{ "css/main.css" | relURL}}' /> {{- range .Site.Params.Assets.customCSS -}}
+    <link rel="stylesheet" href="{{ . | absURL }}" />
+    {{- end -}}
+</head>

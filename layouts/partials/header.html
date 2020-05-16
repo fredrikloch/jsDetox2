@@ -1,0 +1,69 @@
+<header id="site-header">
+    <div class="container">
+        <a href="{{ .Site.BaseURL }}" alt="{{ .Site.Title }}"><h1 class="blog-title heading">{{ .Site.Title }}</h1></a>
+        
+        {{ $currentNode := . }}
+        {{ if .Site.Menus.main }}
+        <p>
+        <ul class="horizontal-list horizontal-list--center">
+        {{ range .Site.Menus.main }}
+                <li class="navigation__item">
+                    {{ .Pre }}<a href="{{.URL}}">{{ .Name }}</a>
+                </li>
+        {{end}}   
+        </ul>
+        </p>
+        {{end}}        
+        <!-- Social accounts/contact info -->
+        <ul class="horizontal-list horizontal-list--center">
+             {{ if .Site.Author.twitter }}
+                <!-- Twitter -->
+                <li class="navigation__item">
+                    <a href="http://twitter.com/{{ .Site.Author.twitter }}" title="@{{ .Site.Author.twitter }} on Twitter">
+                        <i class='icon-twitter-squared'></i>
+                    </a>
+                </li>
+            {{ end }}
+            {{ if .Site.Author.bitbucket }}
+            <!-- Bitbucket -->
+            <li class="navigation__item">
+                <a href="https://bitbucket.org/{{ .Site.Author.bitbucket }}" title="{{ .Site.Author.bitbucket }} on bitbucket">
+                    <i class='icon-bitbucket-squared'></i>
+                 </a>
+            </li>
+            {{ end }}
+            {{ if .Site.Author.github }}
+            <!-- github -->
+            <li class="navigation__item">
+                <a href="https://github.com/{{ .Site.Author.github }}" title="{{ .Site.Author.github }} on github">
+                    <i class='icon-github-squared'></i>
+                </a>
+            </li>
+            {{ end }}
+            {{ if .Site.Author.flickr }}
+            <!-- Flickr -->
+            <li class="navigation__item">
+                <a href="http://www.flickr.com/photos/{{ .Site.Author.flickr }}/" title="{{ .Site.Author.flickr }} on flickr">
+                    <i class='icon-flickr'></i>
+                </a>
+            </li>
+            {{ end }}
+            {{ if .Site.Author.linkedin }}
+            <!-- Linkedin -->
+            <li class="navigation__item">
+                <a href="https://no.linkedin.com/in/{{ .Site.Author.linkedin }}/en" title="Linkedin">
+                    <i class='icon-linkedin-squared'></i>
+                </a>
+            </li>
+            {{ end }}
+            {{ if .Site.Author.email }}
+            <!-- Email -->
+            <li class="navigation__item">
+                <a href="mailto:{{ .Site.Author.email }}" title="Email {{ .Site.Author.email }}">
+                    <i class='icon-mail-squared'></i>
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</header>

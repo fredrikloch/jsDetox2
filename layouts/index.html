@@ -1,0 +1,7 @@
+{{ define "main" }}
+{{ $paginator := .Paginate (where (where .Site.Pages "Type" "in" (slice "post") ) "IsPage" true) }}
+{{ range $paginator.Pages }}
+        {{ .Render "li" }}
+    {{ end }}
+    {{ partial "pagination.html" . }}
+{{ end }}
