@@ -9,6 +9,27 @@
 // Helper
 //
 
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+    grid-gap: 30px;
+    max-width: 1280px;
+    margin: 0 auto 30px;
+      
+      article {
+        position: relative;
+      }
+      
+      .article-img {
+        height: 13rem;
+        width: 100%;
+        object-fit: cover;
+        @media (max-width: 800px) {
+            height: 16rem;
+        }
+      }
+}
+
 
 // ==========================================================================
 // Horizontal List Pattern
@@ -88,9 +109,7 @@ $horizontal-list-delimiter: ',\00A0' !default;
     letter-spacing: 6px;
     font-size: 75px;
     @media (max-width: 800px) {
-        .blog-title {
             font-size: 50px;
-        }
     }
 }
 
@@ -171,24 +190,7 @@ $horizontal-list-delimiter: ',\00A0' !default;
     max-width: 800px;
     margin: auto;
 }
-.shelf {
-    width: 90%;
-    max-width: 1280px;
-    margin: auto;
-    article.li .image {
-      height: 15em;
-      background-repeat:no-repeat;
-      background-position: center;
-      background-size:contain;
-      margin-bottom: 1em;
-    }
-    &:after {
-    /* Or @extend clearfix */
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
+
 // -------------------------------------------------------------------------
 // POSTS
 // -------------------------------------------------------------------------
