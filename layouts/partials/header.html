@@ -48,6 +48,14 @@
                 </a>
             </li>
             {{ end }}
+            {{ if .Site.Author.instagram }}
+            <!-- Flickr -->
+            <li class="navigation__item">
+                <a href="https://instagram.com/{{ .Site.Author.instagram }}/" title="@{{ .Site.Author.instagram }} on instagram">
+                    <i class='icon-instagram'></i>
+                </a>
+            </li>
+            {{ end }}
             {{ if .Site.Author.linkedin }}
             <!-- Linkedin -->
             <li class="navigation__item">

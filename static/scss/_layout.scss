@@ -14,24 +14,23 @@
 //
 .gallery {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));
     grid-gap: 30px;
     max-width: 1280px;
-    margin: 0 auto 30px;
-      
-      article {
+    margin-left: auto;
+    margin-right: auto;
+    article {
         position: relative;
-        grid-column: span 2;
-      
-      
-      img {
-        object-fit: cover;
-        width: 100%;
-        @media (max-width: 800px) {
-            height: 16rem;
+        grid-column: span 2; 
+        img {
+            object-fit: cover;
+            width: 100%;
+            @media (max-width: 800px) {
+                height: 16rem;
         }
       }
     }
+
 }
 
 //
@@ -177,6 +176,7 @@ $horizontal-list-delimiter: ',\00A0' !default;
 }
 
 
+
 .post-header {
     text-align: center;
 }
@@ -226,11 +226,13 @@ $horizontal-list-delimiter: ',\00A0' !default;
 
 
 .post-content, #site-footer {
-
     a {
         color: $color-link;
         text-decoration: none;
         font-weight: bold;
+    }
+    .postimage {
+        max-width: 100%;
     }
 
     a:hover {
@@ -238,7 +240,6 @@ $horizontal-list-delimiter: ',\00A0' !default;
         border-bottom: 1px solid;
     }
 }
-
 
 .m-logo {
     @include hidden();
@@ -271,7 +272,7 @@ $horizontal-list-delimiter: ',\00A0' !default;
 
         .f-post-time {
             float: inherit !important;
-    }
+        }
     }
 
 

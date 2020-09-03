@@ -2,12 +2,12 @@
 <section class="gallery">
 {{ range (.Page.Resources.Match (printf "%s*" (.Get "folder"))) }}
 <article>
-        <a data-fslightbox="{{ $gallery }}" href="{{.RelPermalink}}">
+        <a data-fslightbox="{{ $gallery }}" href="{{ (.Resize "1200x").RelPermalink }}">
         <img
           srcset="
             {{ (.Fill "320x320").RelPermalink }} 320w,
-            {{ (.Fill "600x600").RelPermalink }} 600w,
-            {{ (.Fill "1200x1200").RelPermalink }} 2x"
+            {{ (.Fill "400x400").RelPermalink }} 600w,
+            {{ (.Fill "600x800").RelPermalink }} 2x"
           src="{{ (.Fill "400x400").RelPermalink }}" />
       </a>
 </article>

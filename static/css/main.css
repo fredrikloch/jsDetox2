@@ -1199,10 +1199,11 @@ pre code {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));
   grid-gap: 30px;
   max-width: 1280px;
-  margin: 0 auto 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .gallery article {
   position: relative;
@@ -1353,6 +1354,9 @@ pre code {
   color: #333333;
   text-decoration: none;
   font-weight: bold;
+}
+.post-content .postimage, #site-footer .postimage {
+  max-width: 100%;
 }
 .post-content a:hover, #site-footer a:hover {
   color: #e6e6e6;

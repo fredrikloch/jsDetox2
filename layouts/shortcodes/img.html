@@ -4,8 +4,8 @@
 
 {{ with $.Page.Resources.GetMatch (.Get "name") }}
   <figure class="image">
-      <a data-fslightbox="{{ $gallery }}" href="{{.RelPermalink}}">
-      <img
+      <a data-fslightbox="{{ $gallery }}" href="{{ (.Resize "1200x").RelPermalink }}">
+      <img class="postimage"
         srcset="
           {{ (.Resize "320x").RelPermalink }} 320w,
           {{ (.Resize "600x").RelPermalink }} 600w,
