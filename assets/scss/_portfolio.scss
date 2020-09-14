@@ -1,0 +1,25 @@
+.portfolio {
+	//
+	// Gallery
+	//
+	.gallery {
+	    display: grid;
+	    grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+	    grid-gap: 30px;
+	    max-width: 1280px;
+	    margin-left: auto;
+	    margin-right: auto;
+	    article {
+	        position: relative;
+	        grid-column: span 3; 
+	        img {
+	            object-fit: cover;
+	            width: 100% !important;
+  				height: auto !important;
+	            @media (max-width: 800px) {
+	                height: 16rem;
+	        }
+	      }
+	    }
+	}
+}
