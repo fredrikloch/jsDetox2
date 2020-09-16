@@ -122,9 +122,9 @@ $horizontal-list-delimiter: ',\00A0' !default;
 
 #site-header {
     text-align: center;
-    min-height: 15em;
-    padding-top: 7em;
-    margin-bottom: 5em;
+    min-height: 10em;
+    padding-top: 4em;
+    margin-bottom: 3em;
     @media (max-width: 800px) {
         padding-top: 4em !important;
         margin-bottom: 4em !important;
@@ -135,7 +135,7 @@ $horizontal-list-delimiter: ',\00A0' !default;
 .blog-title {
     text-transform: uppercase;
     letter-spacing: 6px;
-    font-size: 75px;
+    font-size: 70px;
     @media (max-width: 800px) {
             font-size: 50px;
     }
