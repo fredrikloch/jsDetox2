@@ -1,0 +1,14 @@
+{{ define "main" }}
+
+<article class="{{ .Type }}">
+    <section class="post-content">
+        {{ .Content }}
+    </section>
+    <hr>
+    <script src="{{ "js/fslightbox.js" | relURL }}"></script>
+</article>
+
+{{ end }}
+
+
+

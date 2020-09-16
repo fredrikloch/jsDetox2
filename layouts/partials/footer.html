@@ -2,6 +2,6 @@
     <div class="container">
         <a href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" title="Get the RSS feed">
         <span class="tooltip"><i class="icon-rss"></i></span></a>
-        <section>&copy; <a href="{{ .Site.BaseURL }}">{{ .Site.Params.author }}</a> 2020 | All rights reserved</section>
+        <section>&copy; <a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a> 2020 | All rights reserved</section>
     </div>
 </footer>

@@ -1,0 +1,25 @@
+{{ $gallery := .Get "gallery" }}
+<section class="portfolio-gallery">
+{{ range (.Page.Resources.Match (printf "%s*" (.Get "folder"))) }}
+{{ $factor := div .Width .Height }}
+{{ if eq  $factor 1}}
+    <a data-fslightbox="{{ $gallery }}" href="{{ (.Resize "x1200").RelPermalink }}" class="wide">
+    <img
+          srcset="
+            {{ (.Fit "480x320").RelPermalink }} 320w,
+            {{ (.Fit "600x900").RelPermalink }} 600w,
+            {{ (.Fit "1200x800").RelPermalink }} 2x"
+          src="{{ (.Fit "400x600").RelPermalink }}" />
+  	</a>
+ {{ else }}
+    <a data-fslightbox="{{ $gallery }}" href="{{ (.Resize "x1200").RelPermalink }}" class="high">
+    <img
+          srcset="
+            {{ (.Fit "320x256").RelPermalink }} 320w,
+            {{ (.Fit "600x480").RelPermalink }} 600w,
+            {{ (.Fit "1200x960").RelPermalink }} 2x"
+          src="{{ (.Fit "600x480").RelPermalink }}" />
+  	</a>
+  {{ end }}
+{{ end }}
+</section>

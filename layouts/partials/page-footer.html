@@ -1,0 +1,16 @@
+<footer id="site-footer">
+    <div class="container">
+        <span>Share:
+            <a class="icon-twitter-squared" href="http://twitter.com/share?text={{ .Title }}&url={{ .Permalink }}"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            </a>
+            <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            </a>
+            <a class="icon-gplus-squared" href="https://plus.google.com/share?url={{ .Permalink }}"
+               onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+            </a>
+        </span>
+        <section>&copy; <a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a> 2020 | All rights reserved</section>
+    </div>
+</footer>
