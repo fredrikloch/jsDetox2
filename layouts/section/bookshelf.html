@@ -2,10 +2,18 @@
     <section class="cards">
         {{ $paginator := .Paginate (where .Pages "Type" "bookshelf") 12 }}
         {{ range $paginator.Pages }}
-
         <article>
             <a href="{{ .Permalink }}">
-                <img class="article-img" src="{{ $.Site.BaseURL }}images/{{ with .Params.image }}{{ . }}{{ else }}default.jpg{{ end }}" alt="{{ .Title }}" />
+                {{ if .Resources.GetMatch .Params.image }}
+                {{ $thumbnail := .Resources.GetMatch .Params.image }}
+                <img class="article-img"
+                  srcset="
+                    {{ ($thumbnail.Resize "320x480").RelPermalink }} 320w,
+                    {{ ($thumbnail.Resize "400x600").RelPermalink }} 400w"
+                  src="{{ ($thumbnail.Resize "400x600").RelPermalink }}" alt="{{ .Title }}"/>
+                  {{ else }}
+                  {{ .Params.image }}
+                  {{ end }}
             </a>
         </article>
         {{ end }}
